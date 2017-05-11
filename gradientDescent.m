@@ -16,7 +16,12 @@ for iter = 1:num_iters
     % Hint: While debugging, it can be useful to print out the values
     %       of the cost function (computeCost) and gradient here.
     %
-
+    % garfield test: theta = theta - alpha* 2* X'* (X*theta - y);
+    theta_old = theta;
+    
+    theta(1) = theta_old(1) - alpha / m * sum(X*theta_old - y);
+    
+    theta(2) = theta_old(2) - alpha / m * sum((X*theta_old - y) .* X(:,2));
 
 
 
