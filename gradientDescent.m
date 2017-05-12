@@ -32,7 +32,10 @@ for iter = 1:num_iters
 
     % Save the cost J in every iteration    
     J_history(iter) = computeCost(X, y, theta);
+    fprintf('\nIteration %d', iter);
+    fprintf('\nWith theta = [%f ; %f]\nCost computed = %f\n================', 
+                             theta(1), theta(2), J_history(iter));
 
 end
-
+fprintf('\n');
 end
